@@ -1,0 +1,19 @@
+[project]
+name = "micropython-assignment-template"
+version = "1.0.0"
+requires-python= ">=3.10"
+dependencies = [
+    "gatorgrade",
+    "mypy>=1.19.1",
+    "pytest",
+    "mpremote",
+    "micropython-rp2-pico-stubs",
+]
+
+[tool.pytest]
+pythonpath = [
+    "src"
+]
+testpaths = [
+    "tests"
+]

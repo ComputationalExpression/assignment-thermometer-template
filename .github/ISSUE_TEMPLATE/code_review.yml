@@ -1,0 +1,93 @@
+name: Code Review
+description: A code review conducted with a Technical Leader (TL) or the course instructor.
+title: "Code Review"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please respond to the following questions about the project. Recall that each student must
+        conduct a code review _individually_.
+  - type: input
+    attributes:
+      label: Name of reviewee
+      description: Write the name of the reviewee above
+  - type: checkboxes
+    attributes:
+      label: Functional requirements
+      description: Check each of the following satisfied functional requirements
+      options:
+        - label: "Code solves the issue presented"
+        - label: "Code functions, even if not fully solving the issue presented"
+        - label: "Performance of the code is acceptable"
+  - type: checkboxes
+    attributes:
+        label: Code style and legibility
+        description: Check each of the following checkboxes that describe code legibility
+        options:
+          - label: The code contains comments
+          - label: Variable names are accurate and appropriate
+          - label: The code is easy to read
+          - label: The code is formatted correctly
+  - type: markdown
+    attributes:
+      value: |
+         Conduct a short walkthrough with the programmer, marking the topics appropriately explained.
+  - type: checkboxes
+    attributes:
+        label: Code walkthrough
+        description: Check each of the following checkboxes that describe code legibility
+        options:
+          - label: The contributor can describe the full flow of the code, independent of help from their collaborator
+          - label: The contributor described the team's collaboration and use of Github Flow
+          - label: The contributor clearly connected the code to the problem presented in the assignment
+          - label: The contributor described their process well, communicating confidence and understanding of their own code
+          - label: The contributor described how they and their collaborator physically tested their project
+  - type: dropdown
+    attributes:
+      label: Collaborative Quality
+      description: Ask the student to rate the quality of their collaboration on a scale from 1-5.
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+  - type: textarea
+    attributes:
+      label: Explanation
+      description: From the student's description of their process, write your summary of how they collaborated
+      value : |
+      #### Collaboration
+  - type: dropdown
+    attributes:
+      label: Evaluation of Collaborative Quality
+      description: Based on your impression of the student's explanation, rate the quality of their collaboration/contribution
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+  - type: textarea
+    attributes:
+      label: Qualification of Quality Rating
+      description: Why did you rate the collaboration this way?
+      value: |
+      #### Collaborative Rating Qualification
+  - type: textarea
+    attributes:
+        label: The Good, The Bad, The Ugly
+        description: Write a short note with at least 3 aspects done well, and 3 aspects on which the code could be improved
+        value: |
+          #### Positives
+          
+          1. 
+          2.
+          3.
+          
+          ####Improvements
+          
+          1.
+          2.
+          3.
+    validations:

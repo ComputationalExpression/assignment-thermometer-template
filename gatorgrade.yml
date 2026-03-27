@@ -1,0 +1,95 @@
+- description: "[MAIN] Program executes without err"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_thermometer.py::test_main_exec_no_err
+- description: "[THERMOMETER] lights_out sets all lights to off"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_thermometer.py::test_reset_lights
+- description: "[THERMOMETER] Program's 'reset' turns all lights on and then off"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_thermometer.py::test_reset_system
+- description: "[THERMOMETER] convert_temp_to_c converts a random value to correct temperature in C"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_thermometer.py::test_convert_to_c
+- description: "[THERMOMETER] convert_temp_to_f converts a random value to correct temperature in F"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_thermometer.py::test_convert_to_f
+- description: "[THERMOMETER] set_led_output turns ON the BLUE LED for cold temps"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_thermometer.py::test_led_output_cold
+- description: "[THERMOMETER] set_led_output turns ON the YELLOW LED for warm temps"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_thermometer.py::test_led_output_warm
+- description: "[THERMOMETER] set_led_output turns ON the RED LED for hot temps"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_thermometer.py::test_led_output_hot
+- description: "[SENSOR] Program correctly reads a sensor voltage and applies conversion"
+  check: ExecuteCommand
+  options:
+    command: uv run pytest tests/test_thermometer.py::test_read_sensor_voltage
+- description: "[THERMOMETER] Functions are annotated properly"
+  check: ExecuteCommand
+  options:
+    command: uv run mypy src/Thermometer.py
+- description: "[SENSOR] Functions are annotated properly"
+  check: ExecuteCommand
+  options:
+    command: uv run mypy src/Sensor.py
+- src/Thermometer.py:
+  - description: "[THERMOMETER] Code contains at least 10 original comments"
+    check: CountSingleLineComments
+    options:
+      language: Python
+      count: 10
+      exact: false
+  - description: "[THERMOMETER] Code does not contain any TODOs"
+    check: MatchFileFragment
+    options:
+      fragment: TODO
+      count: 0
+      exact: true
+- src/Sensor.py:
+  - description: "[SENSOR] Code contains at least 3 original comments"
+    check: CountSingleLineComments
+    options:
+      language: Python
+      count: 3
+      exact: false
+  - description: "[SENSOR] Code does not contain any TODOs"
+    check: MatchFileFragment
+    options:
+      fragment: TODO
+      count: 0
+      exact: true
+- src/main.py:
+  - description: "[MAIN] Code contains at least 5 original comments"
+    check: CountSingleLineComments
+    options:
+      language: Python
+      count: 5
+      exact: false
+- docs/summary.md:
+  - description: "[SUMMARY] The summary document contains no TODOs"
+    check: MatchFileFragment
+    options:
+      fragment: TODO
+      count: 0
+      exact: true
+  - description: "[MAIN] Code contains at least 5 original comments"
+    check: MatchFileFragment
+    options:
+      fragment: TODO
+      count: 0
+      exact: true
+  - description: "[SUMMARY] The summary document meets the word count"
+    check: CountFileWords
+    options:
+      count: 150
+      exact: false
