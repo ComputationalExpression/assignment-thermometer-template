@@ -1,6 +1,6 @@
 # Taking the Temperature
 
-![Image]()
+[![Image]()](https://raw.githubusercontent.com/ComputationalExpression/assignment-thermometer-template/refs/heads/media/media/thermometer.png)
 
 |Date |       |
 |:----|:------|
@@ -83,6 +83,7 @@ ADC(4)
 ```
 
 One _might_ think that reading a temperature sensor results in a temperature. Here, that's not the case. The sensor reports a relative voltage which we need to calculate using the following formula:
+
 $$ reading \times \frac{3.3}{65535} $$
 
 This should result from a _method_ of `Sensor` named `read_sensor_voltage` called in `main`.
@@ -92,8 +93,11 @@ This should result from a _method_ of `Sensor` named `read_sensor_voltage` calle
 #### Temperatures
 
 Now that we have the reading of the voltage of the sensor, we convert to a `Celsius` temperature using the following conversion:
+
 $$ 27 - \frac{(voltage - 0.706)}{0.001721} $$
+
 From there, we can calculate the temperature in Fahrenheit, which we'll use to determine relative warmth:
+
 $$ (celsius \times \frac{9}{5}) + 32$$
 
 The functions that do this work should be named, respectively:
