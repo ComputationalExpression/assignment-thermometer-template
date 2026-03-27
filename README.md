@@ -1,6 +1,6 @@
 # Taking the Temperature
 
-![Image]()
+![Image](https://raw.githubusercontent.com/ComputationalExpression/assignment-thermometer-template/refs/heads/media/media/thermometer.png)
 
 |Date |       |
 |:----|:------|
