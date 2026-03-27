@@ -16,5 +16,5 @@ class Sensor:
         Returns:
             float: The measured voltage in volts.
         """
-        # TODO - Implement the method to read the ADC value and convert it to voltage
-    
+        # TODO
+        pass
