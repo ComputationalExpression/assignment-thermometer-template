@@ -84,7 +84,9 @@ ADC(4)
 
 One _might_ think that reading a temperature sensor results in a temperature. Here, that's not the case. The sensor reports a relative voltage which we need to calculate using the following formula:
 
-$$ reading \times \frac{3.3}{65535} $$
+$$ 
+reading \times \frac{3.3}{65535} 
+$$
 
 This should result from a _method_ of `Sensor` named `read_sensor_voltage` called in `main`.
 
